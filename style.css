@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+}
+
+.logo-box img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: #333; /* vissza a klasszikus szín */
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-shadow: none;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #eaeaea;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta {
+  padding: 12px 25px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  margin-top: 0;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.request-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #333;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+@media(max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  nav a { margin-left: 12px; }
+  .grid { flex-direction: column; align-items: center; }
+}
