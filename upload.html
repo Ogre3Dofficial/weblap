@@ -33,15 +33,20 @@
   </div>
 
   <div id="upload" style="display:none;">
-    <form>
+    <form id="productForm">
       <p>Termék neve:</p>
       <input type="text" name="product_name" required>
+
       <p>Ár:</p>
       <input type="text" name="price" required>
-      <p>Kép URL:</p>
-      <input type="text" name="image_url" required>
+
+      <p>Kép feltöltése:</p>
+      <input type="file" id="imageFile" accept="image/*" required>
+      <br><br>
       <button type="submit">Feltöltés</button>
     </form>
+
+    <div id="preview" style="margin-top:20px;"></div>
   </div>
 </main>
 
@@ -55,6 +60,30 @@ function checkPassword() {
     document.getElementById('error').innerText = 'Hibás jelszó!';
   }
 }
+
+// Termék feltöltés kezelése (csak front-end)
+document.getElementById('productForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = this.product_name.value;
+  const price = this.price.value;
+  const file = document.getElementById('imageFile').files[0];
+
+  if(file) {
+    const reader = new FileReader();
+    reader.onload = function(event) {
+      const imgSrc = event.target.result;
+      const previewDiv = document.getElementById('preview');
+      previewDiv.innerHTML = `
+        <h3>Feltöltött termék:</h3>
+        <p>Név: ${name}</p>
+        <p>Ár: ${price}</p>
+        <img src="${imgSrc}" alt="${name}" style="max-width:300px; margin-top:10px;">
+      `;
+    }
+    reader.readAsDataURL(file);
+  }
+});
 </script>
 
 </body>
