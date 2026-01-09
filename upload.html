@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Termék feltöltés – Ogre3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-box">
+    <img src="logo.png" alt="Ogre3D logo">
+    <strong class="logo-text">Ogre3D</strong>
+  </div>
+  <nav>
+    <a href="index.html">Főoldal</a>
+    <a href="products.html">Termékek</a>
+    <a href="request.html">Ajánlatkérés</a>
+    <a href="upload.html">Termék feltöltés</a>
+    <a href="contact.html">Kapcsolat</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Termék feltöltés</h1>
+
+  <div id="login">
+    <p>Jelszó a feltöltéshez:</p>
+    <input type="password" id="password" placeholder="Jelszó">
+    <button onclick="checkPassword()">Belépés</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="upload" style="display:none;">
+    <form>
+      <p>Termék neve:</p>
+      <input type="text" name="product_name" required>
+      <p>Ár:</p>
+      <input type="text" name="price" required>
+      <p>Kép URL:</p>
+      <input type="text" name="image_url" required>
+      <button type="submit">Feltöltés</button>
+    </form>
+  </div>
+</main>
+
+<script>
+function checkPassword() {
+  const pwd = document.getElementById('password').value;
+  if(pwd === 'Ogre3d01234#') {
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('upload').style.display = 'block';
+  } else {
+    document.getElementById('error').innerText = 'Hibás jelszó!';
+  }
+}
+</script>
+
+</body>
+</html>
